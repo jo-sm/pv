@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-function-bind",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "external-helpers"
+  ]
+}

@@ -1,60 +1,37 @@
-// Copyright (c) 2013-2015 Marco Biasini
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to 
-// deal in the Software without restriction, including without limitation the 
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-// sell copies of the Software, and to permit persons to whom the Software is 
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in 
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-// DEALINGS IN THE SOFTWARE.
+import { vec3 } from '@mapbox/gl-matrix';
 
-define(
-  [
-    './gl-matrix', 
-  ], 
-  function(glMatrix) {
+export class CoordGroup {
+  constructor(structure) {
+    this._structure = structure;
+    this._frames = [];
+    this._title = '';
+  }
 
-"use strict";
-
-var vec3 = glMatrix.vec3;
-
-function CoordGroup(structure) {
-  this._structure = structure;
-  this._frames = [];
-}
-
-CoordGroup.prototype = {
-  addFrame : function(frame) {
+  addFrame(frame) {
     this._frames.push(frame);
-  },
-  useFrame : function(frameIndex) {
+  }
+
+  useFrame(frameIndex) {
     var frame = this._frames[frameIndex];
     this._structure.eachAtom(function(atom, index) {
       var offset = index * 3;
-      vec3.set(atom.pos(),  
-               frame[offset + 0], frame[offset + 1], frame[offset + 2]);
+      vec3.set(atom.pos(), frame[offset + 0], frame[offset + 1], frame[offset + 2]);
     });
-  },
-};
+  }
 
-function dcd(structure, data) {
+  set title(value) {
+    this._title = value;
+  }
+}
+
+const dcd = (structure, data) => {
   var cg = new CoordGroup(structure);
   var endianness = String.fromCharCode(data.getUint8(4)) +
                    String.fromCharCode(data.getUint8(5)) +
                    String.fromCharCode(data.getUint8(6)) +
                    String.fromCharCode(data.getUint8(7));
-  // FIXME: error handling and different dcd variants. 
-  // At the moment, this only works for a very small subset of files, I 
+  // FIXME: error handling and different dcd variants.
+  // At the moment, this only works for a very small subset of files, I
   // can't even tell you which ones.
   var swapBytes = endianness === 'DROC';
   var current = 92;
@@ -66,6 +43,9 @@ function dcd(structure, data) {
     title += String.fromCharCode(data.getUint8(current));
     current += 1;
   }
+
+  cg.title = title;
+
   //var fAtomCount = data.getUint32(4 * 10, swapBytes);
   var numFrames = data.getUint32(4 * 2, swapBytes);
   var format = data.getUint32(4 * 21, swapBytes);
@@ -85,9 +65,9 @@ function dcd(structure, data) {
     }
     for (var k = 0; k < 3; ++k) {
       current += 4;
-      for (var j = 0; j < tAtomCount ; ++j) {
+      for (var j = 0; j < tAtomCount; ++j) {
         var value = data.getFloat32(current, swapBytes);
-        frame[j * 3 + k] = value ;
+        frame[j * 3 + k] = value;
         current += 4;
       }
       current += 4;
@@ -95,7 +75,7 @@ function dcd(structure, data) {
     cg.addFrame(frame);
   }
   return cg;
-}
+};
 
 function fetch(url, callback) {
   var oReq = new XMLHttpRequest();
@@ -109,18 +89,9 @@ function fetch(url, callback) {
   oReq.send(null);
 }
 
-function fetchDcd(url, structure, callback) {
+export const fetchDcd = (url, structure, callback) => {
   fetch(url, function(data) {
     var coordGroup = dcd(structure, data);
     callback(coordGroup);
   });
-}
-
-return {
-  CoordGroup : CoordGroup,
-  fetchDcd : fetchDcd,
-
 };
-
-});
-

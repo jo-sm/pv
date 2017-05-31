@@ -1,0 +1,2039 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"reque",
+				"requestedLength"
+			],
+			[
+				"buff",
+				"bufferType"
+			],
+			[
+				"gra",
+				"gradient"
+			],
+			[
+				"from",
+				"fromValues"
+			],
+			[
+				"uplo",
+				"uploadData"
+			],
+			[
+				"ex",
+				"extraProps"
+			],
+			[
+				"Crea",
+				"CreateChildPage"
+			],
+			[
+				"interme",
+				"intermediate_pdb_path"
+			],
+			[
+				"new_re",
+				"new_residue_names"
+			],
+			[
+				"get_",
+				"get_toppar_path"
+			],
+			[
+				"sett",
+				"settings_module"
+			],
+			[
+				"bas_",
+				"bad_res_list"
+			],
+			[
+				"prm_",
+				"prm_path"
+			],
+			[
+				"save",
+				"save_residue_toppar_locally"
+			],
+			[
+				"notifi",
+				"notificationData"
+			],
+			[
+				"noti",
+				"notificationType"
+			],
+			[
+				"no",
+				"notificationsWebsocket"
+			],
+			[
+				"structur",
+				"structure_parts"
+			],
+			[
+				"strue",
+				"structure_parts"
+			],
+			[
+				"pychm",
+				"pychm_structure"
+			],
+			[
+				"child",
+				"child_structure"
+			],
+			[
+				"ge_",
+				"get_default_last_patch"
+			],
+			[
+				"valid",
+				"valid_first_patch"
+			],
+			[
+				"program_",
+				"program_options"
+			],
+			[
+				"watch",
+				"watch_pid"
+			],
+			[
+				"hotsw",
+				"hotswap_pid"
+			],
+			[
+				"water",
+				"water_box_desc"
+			],
+			[
+				"charmm",
+				"charmm_segment"
+			],
+			[
+				"coor",
+				"coordinates_task"
+			],
+			[
+				"stru",
+				"structuresData"
+			],
+			[
+				"str",
+				"structuresData"
+			],
+			[
+				"schd",
+				"sched_id"
+			],
+			[
+				"asyncio",
+				"asyncio_logger"
+			],
+			[
+				"log_l",
+				"log_level_name_to_num"
+			],
+			[
+				"pack",
+				"packed_length"
+			],
+			[
+				"serve",
+				"server_future"
+			],
+			[
+				"result",
+				"result_function"
+			],
+			[
+				"get",
+				"get_interface"
+			],
+			[
+				"met",
+				"meta_states"
+			],
+			[
+				"log",
+				"log_wrapper"
+			],
+			[
+				"__handle",
+				"__handle_client_disconnect"
+			],
+			[
+				"comm",
+				"command"
+			],
+			[
+				"ser",
+				"server_instance"
+			],
+			[
+				"base",
+				"base_validator"
+			],
+			[
+				"capi",
+				"capitalized_name"
+			],
+			[
+				"Va",
+				"ValidatorException"
+			],
+			[
+				"get_li",
+				"get_list_for_all_segments"
+			],
+			[
+				"pre_t",
+				"pre_task_id"
+			],
+			[
+				"pre_",
+				"pre_task_id"
+			],
+			[
+				"pre",
+				"pre_task_id"
+			],
+			[
+				"coordin",
+				"coordinate_types"
+			],
+			[
+				"coord",
+				"coordinates_task"
+			],
+			[
+				"script",
+				"slurm_script_path"
+			],
+			[
+				"files",
+				"files_used"
+			],
+			[
+				"Module",
+				"ModuleNotFoundError"
+			],
+			[
+				"rendere",
+				"rendered_template"
+			],
+			[
+				"return",
+				"returncode"
+			],
+			[
+				"squeue",
+				"squeue_cmd"
+			],
+			[
+				"slurm",
+				"slurm_cmd"
+			],
+			[
+				"render",
+				"rendered_template"
+			],
+			[
+				"templat",
+				"template_values"
+			],
+			[
+				"templa",
+				"template_values"
+			],
+			[
+				"scheduler",
+				"scheduler_path"
+			],
+			[
+				"curr",
+				"current_hash"
+			],
+			[
+				"read",
+				"read_from_pipe"
+			],
+			[
+				"current",
+				"current_time"
+			],
+			[
+				"second",
+				"SECONDS"
+			],
+			[
+				"has_",
+				"has_hours"
+			],
+			[
+				"openm",
+				"openmpi-bin"
+			],
+			[
+				"atoms",
+				"atomsAmount"
+			],
+			[
+				"ani",
+				"anisotropics"
+			],
+			[
+				"anis",
+				"anisotropic"
+			],
+			[
+				"lone",
+				"lonepairAtoms"
+			],
+			[
+				"currentRe",
+				"currentResidueType"
+			],
+			[
+				"ER",
+				"RTFParseError"
+			],
+			[
+				"previ",
+				"previousResidueType"
+			],
+			[
+				"prev",
+				"previousResidueType"
+			],
+			[
+				"previous",
+				"previousResidue"
+			],
+			[
+				"atomMas",
+				"atomMassType"
+			],
+			[
+				"default",
+				"defaultPatches"
+			],
+			[
+				"do",
+				"doAngles"
+			],
+			[
+				"firs",
+				"firstPatch"
+			],
+			[
+				"de",
+				"declareTable"
+			],
+			[
+				"atom",
+				"atomType"
+			],
+			[
+				"RTF",
+				"RTFParseError"
+			],
+			[
+				"atomType",
+				"atomTypeNumber"
+			],
+			[
+				"Error",
+				"RTFParseError"
+			],
+			[
+				"start",
+				"startsWith"
+			],
+			[
+				"minor",
+				"minorVersion"
+			],
+			[
+				"parse",
+				"parseInt"
+			],
+			[
+				"RRT",
+				"RTFParseError"
+			],
+			[
+				"major",
+				"majorVersion"
+			],
+			[
+				"sta",
+				"startsWith"
+			],
+			[
+				"ener",
+				"energy_cutoff"
+			],
+			[
+				"angle",
+				"angle_lines"
+			],
+			[
+				"dihe",
+				"dihedral_lines"
+			],
+			[
+				"bond",
+				"bond_lines"
+			],
+			[
+				"ligand",
+				"ligand_prm_paths"
+			],
+			[
+				"fra",
+				"fragment_prm_paths"
+			],
+			[
+				"is_",
+				"is_comment"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
+				"param",
+				"parameter"
+			],
+			[
+				"INP",
+				"INPUT_MOL2"
+			],
+			[
+				"SEED",
+				"SEED_INPUT_FILE_PREFIX"
+			],
+			[
+				"INT",
+				"INPUT_MOL2_PREFIX"
+			],
+			[
+				"IN",
+				"INPUT_MOL2"
+			],
+			[
+				"INPUT",
+				"INPUT_MOL2_PREFIX"
+			],
+			[
+				"residue",
+				"residue_name"
+			],
+			[
+				"res",
+				"residue_name"
+			],
+			[
+				"lig",
+				"ligand_paths"
+			],
+			[
+				"output",
+				"output_prefix"
+			],
+			[
+				"frag",
+				"fragment_lines"
+			],
+			[
+				"seed",
+				"seed_input_file_lines"
+			],
+			[
+				"frame",
+				"fragment_lines"
+			],
+			[
+				"fram",
+				"fragment_count"
+			],
+			[
+				"See",
+				"SEED_INPUT_FILE"
+			],
+			[
+				"JOB",
+				"JOB_TYPE"
+			],
+			[
+				"JOB_",
+				"JOB_ARGUMENTS"
+			],
+			[
+				"mol2",
+				"mol2"
+			],
+			[
+				"count",
+				"count_parts"
+			],
+			[
+				"rtf",
+				"rtf_filename"
+			],
+			[
+				"mol",
+				"mol2_no_ss_charmm"
+			],
+			[
+				"vmd_",
+				"vmd_mol2_no_ss"
+			],
+			[
+				"vmd",
+				"vmd_mol2_no_ss"
+			],
+			[
+				"PRO",
+				"PROTEIN_BASE_NAME"
+			],
+			[
+				"__vali",
+				"__validators"
+			],
+			[
+				"child_",
+				"child_job_program_module"
+			],
+			[
+				"resi",
+				"residue_text"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/viewpoint.js",
+			"settings":
+			{
+				"buffer_size": 2815,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/traj.js",
+			"settings":
+			{
+				"buffer_size": 2552,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/touch.js",
+			"settings":
+			{
+				"buffer_size": 5182,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/slab.js",
+			"settings":
+			{
+				"buffer_size": 870,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "export default class MouseHandler {\n  constructor(canvas, viewer, cam, animationTime) {\n    this._viewer = viewer;\n    this._canvas = canvas;\n    this._cam = cam;\n    this._canvas = canvas;\n    this._animationTime = animationTime;\n    this._lastMouseUpTime = null;\n    this._init();\n\n    this._boundListeners = {\n      doubleClick: ::this._mouseDoubleClick,\n      wheel: ::this._mouseWheel,\n      down: ::this._mouseDown,\n      rotate: ::this._mouseRotate,\n      pan: ::this._mousePan,\n      up: ::this._mouseUp\n    };\n  }\n\n  _centerOnClicked(picked) {\n    if (picked === null) {\n      return;\n    }\n    this._viewer.setCenter(picked.pos(), this._animationTime);\n  }\n\n  _mouseUp(event) {\n    var canvas = this._canvas;\n    var currentTime = (new Date()).getTime();\n    if ((this._lastMouseUpTime === null ||\n        currentTime - this._lastMouseUpTime > 300) &\n        (currentTime - this._lastMouseDownTime < 300)) {\n      var rect = this._canvas.domElement().getBoundingClientRect();\n      var picked = this._viewer.pick(\n          { x : event.clientX - rect.left, y : event.clientY - rect.top });\n      this._viewer._dispatchEvent(event, 'click', picked);\n    }\n\n    this._lastMouseUpTime = currentTime;\n\n    canvas.removeEventListener('mousemove', this._mouseRotateListener);\n    canvas.removeEventListener('mousemove', ::this._mousePan);\n    canvas.removeEventListener('mouseup', this._mouseUpListener);\n    document.removeEventListener('mouseup', this._mouseUpListener);\n    document.removeEventListener('mousemove', this._mouseRotateListener);\n    document.removeEventListener('mousemove', this._mousePanListener);\n  }\n\n  setCam(cam) {\n    this._cam = cam;\n  }\n\n  _init() {\n    this._mousePanListener = utils.bind(this, this._mousePan);\n    this._mouseRotateListener = utils.bind(this, this._mouseRotate);\n    this._mouseUpListener = utils.bind(this, this._mouseUp);\n\n    // Firefox responds to the wheel event, whereas other browsers listen to\n    // the mousewheel event. Register different event handlers, depending on\n    // what properties are available.\n    this._canvas.onWheel(utils.bind(this, this._mouseWheel));\n    this._canvas.on('dblclick', utils.bind(this, this._mouseDoubleClick));\n    this._canvas.on('mousedown', utils.bind(this, this._mouseDown));\n    return true;\n  }\n\n  _mouseWheel(event) {\n    this._cam.zoom(event.deltaY < 0 ? 1 : -1);\n    event.preventDefault();\n    this._viewer.requestRedraw();\n  }\n\n  _mouseDoubleClick(event) {\n    var rect = this._canvas.domElement().getBoundingClientRect();\n    var picked = this._viewer.pick(\n        { x : event.clientX - rect.left, y : event.clientY - rect.top });\n    this._viewer._dispatchEvent(event, 'doubleClick', picked);\n    this._viewer.requestRedraw();\n  }\n\n  _mouseDown(event) {\n    if (event.button !== 0 && event.button !== 1) {\n      return;\n    }\n    this._lastMouseDownTime = (new Date()).getTime();\n    event.preventDefault();\n    if (event.shiftKey === true || event.button === 1) {\n      this._canvas.on('mousemove', this._mousePanListener);\n      document.addEventListener('mousemove', this._mousePanListener, false);\n    } else {\n      this._canvas.on('mousemove', this._mouseRotateListener);\n      document.addEventListener('mousemove', this._mouseRotateListener, false);\n    }\n    this._canvas.on('mouseup', this._mouseUpListener);\n    document.addEventListener('mouseup', this._mouseUpListener, false);\n    this._lastMousePos = { x : event.pageX, y : event.pageY };\n  }\n\n  _mouseRotate(event) {\n    var newMousePos = { x : event.pageX, y : event.pageY };\n    var delta = {\n      x : newMousePos.x - this._lastMousePos.x,\n      y : newMousePos.y - this._lastMousePos.y\n    };\n\n    var speed = 0.005;\n    this._cam.rotateX(speed * delta.y);\n    this._cam.rotateY(speed * delta.x);\n    this._lastMousePos = newMousePos;\n    this._viewer.requestRedraw();\n  }\n\n  _mousePan(event) {\n    var newMousePos = { x : event.pageX, y : event.pageY };\n    var delta = {\n      x : newMousePos.x - this._lastMousePos.x,\n      y : newMousePos.y - this._lastMousePos.y\n    };\n\n    // adjust speed according to distance to camera center, it's not\n    // perfect but gives good enough results.\n    var speed =\n      0.002 * Math.tan(0.5 * this._cam.fieldOfViewY()) * this._cam.zoom();\n    this._cam.panXY(speed * delta.x,\n                    speed * delta.y);\n    this._lastMousePos = newMousePos;\n    this._viewer.requestRedraw();\n  }\n}\n",
+			"file": "src/mouse.js",
+			"file_size": 4551,
+			"file_write_time": 131405903810000000,
+			"settings":
+			{
+				"buffer_size": 4412,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/buffer-allocators.js",
+			"settings":
+			{
+				"buffer_size": 747,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 431,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".eslintrc",
+			"settings":
+			{
+				"buffer_size": 5946,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n  \"name\": \"bio-pv\",\n  \"version\": \"1.9.0dev\",\n  \"description\": \"WebGL protein viewer \",\n  \"homepage\": \"https://github.com/biasmv/pv\",\n  \"author\": {\n    \"name\": \"Marco Biasini\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/biasmv/pv.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/biasmv/pv/issues\"\n  },\n  \"licenses\": [\n    {\n      \"type\": \"MIT\",\n      \"url\": \"https://github.com/biasmv/pv/blob/master/LICENSE.txt\"\n    }\n  ],\n  \"main\": \"bio-pv.js\",\n  \"devDependencies\": {\n    \"amdclean\": \"~2.4.0\",\n    \"eslint\": \"^3.19.0\",\n    \"grunt\": \"~0.4.5\",\n    \"grunt-contrib-concat\": \"~0.3.0\",\n    \"grunt-contrib-jshint\": \"~0.6.3\",\n    \"grunt-contrib-requirejs\": \"~0.4.4\",\n    \"grunt-contrib-uglify\": \"~0.2.2\",\n    \"grunt-remove-logging\": \"~0.2.0\",\n    \"mkdirp\": \"^0.5.0\"\n  },\n  \"optionalDependencies\": {\n    \"browserify\": \"^9.0.8\",\n    \"sniper\": \"^0.2.16\"\n  },\n  \"sniper\": {\n    \"js\": [\n      \"/js/bio-pv.browserify.js\"\n    ],\n    \"buildJS\": [],\n    \"first\": \"simple\",\n    \"snippets\": [\n      \"snippets\"\n    ]\n  },\n  \"scripts\": {\n  },\n  \"files\": [\n    \"README.md\",\n    \"bio-pv.js\",\n    \"bio-pv.min.js\",\n    \"bower.json\",\n    \"LICENSE.txt\",\n    \"snippets\",\n    \"pdbs\",\n    \"js/jquery-2.0.2.min.js\",\n    \"js/jquery-ui.min.js\",\n    \"js/bio-pv.browserify.js\",\n    \"js/modernizr-2.8.3.min.js\",\n    \"foundation-5.4.7.min.js\",\n    \"package.json\"\n  ],\n  \"keywords\": [\n    \"protein\",\n    \"3d\",\n    \"webgl\",\n    \"biojs\"\n  ],\n  \"dependencies\": {\n    \"babel-eslint\": \"^7.2.3\",\n    \"eslint_d\": \"^4.2.5\",\n    \"gl-matrix\": \"^2.3.2\"\n  }\n}\n",
+			"file": "package.json",
+			"file_size": 1652,
+			"file_write_time": 131403214010000000,
+			"settings":
+			{
+				"buffer_size": 1544,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packi",
+				"Package Control: Install Package"
+			],
+			[
+				"show",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"packre",
+				"Package Control: Remove Package"
+			],
+			[
+				"packup",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"packremo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"packreove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packint",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 475.0
+	},
+	"console":
+	{
+		"height": 129.0,
+		"history":
+		[
+			"stylelint_d",
+			"os.environ",
+			"import os",
+			"os.environ",
+			"import os",
+			"òs.environ",
+			"os.environ",
+			"os.environ['PYTHONPATH']",
+			"os.environ",
+			"import os",
+			"sys",
+			"import sys",
+			"sys",
+			"console.log",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/josh/git-repos/pv",
+		"/Users/josh/git-repos/pv/src"
+	],
+	"file_history":
+	[
+		"/Users/josh/git-repos/pv/src/svd.js",
+		"/Users/josh/git-repos/pv/src/color.js",
+		"/Users/josh/git-repos/pv/src/geom.js",
+		"/Users/josh/git-repos/pv/src/io.js",
+		"/Users/josh/git-repos/pv/.editorconfig",
+		"/Users/josh/git-repos/pv/src/viewpoint.js",
+		"/Users/josh/git-repos/pv/.eslintrc",
+		"/Users/josh/charmming/assets/css/Button.css",
+		"/Users/josh/charmming/build.js",
+		"/Users/josh/charmming/charmming/settings/development.py",
+		"/Users/josh/charmming/assets/js/pages/MainPage.js",
+		"/Users/josh/charmming/assets/js/ui/SideNav.js",
+		"/Users/josh/charmming/assets/js/ui/Nav.js",
+		"/Users/josh/charmming/assets/css/Input.css",
+		"/Users/josh/charmming/assets/js/components/Button.js",
+		"/Users/josh/charmming/assets/js/store.js",
+		"/Users/josh/charmming/assets/js/dispatchers/DeleteStructure.js",
+		"/Users/josh/charmming/assets/js/actions/RemoveStructure.js",
+		"/Users/josh/charmming/assets/js/pages/CreateChildPage.js",
+		"/Users/josh/charmming/charmming/models/Structure.py",
+		"/Users/josh/charmming/assets/js/actions/NavigateTo.js",
+		"/Users/josh/charmming/assets/js/actions/HandleInitialAuth.js",
+		"/Users/josh/charmming/assets/css/SideNav.css",
+		"/Users/josh/charmming/assets/js/components/PageComponent.js",
+		"/Users/josh/charmming/assets/js/utils/page.js",
+		"/Users/josh/charmming/assets/js/actions/SetStructures.js",
+		"/Users/josh/charmming/assets/js/dispatchers/HandleInitialAuth.js",
+		"/Users/josh/charmming/watcher.js",
+		"/Users/josh/charmming/assets/js/ui/Container.js",
+		"/Users/josh/charmming/assets/css/base.css",
+		"/Users/josh/charmming/charmming/utils/build.py",
+		"/Users/josh/charmming/charmming/models/Segment.py",
+		"/Users/josh/charmming/charmming/utils/toppar.py",
+		"/Users/josh/charmming/assets/css/index.css",
+		"/Users/josh/charmming/assets/css/Viewer.css",
+		"/Users/josh/charmming/assets/css/Container.css",
+		"/Users/josh/charmming/package.json",
+		"/Users/josh/charmming/assets/js/pages/LoginPage.js",
+		"/Users/josh/charmming/assets/css/Separator.css",
+		"/Users/josh/charmming/assets/css/Page.css",
+		"/Users/josh/charmming/assets/css/Section.css",
+		"/Users/josh/charmming/assets/css/ListMenu.css",
+		"/Users/josh/charmming/assets/css/Nav.css",
+		"/Users/josh/charmming/assets/js/App.js",
+		"/Users/josh/charmming/assets/css/JobStatus.css",
+		"/Users/josh/charmming/charmming/utils/residue.py",
+		"/Users/josh/charmming/charmming/views/BaseView.py",
+		"/Users/josh/charmming/charmming/utils/log.py",
+		"/Users/josh/charmming/start.sh",
+		"/Users/josh/charmming/charmming/wsgi.py",
+		"/Users/josh/charmming/charmming/utils/job.py",
+		"/Users/josh/charmming/charmming/jobs/__init__.py",
+		"/Users/josh/charmming/assets/js/actions/notifications/UpdateTask.js",
+		"/Users/josh/charmming/charmming/validators/charmm/Minimization.py",
+		"/Users/josh/charmming/charmming/views/TasksView.py",
+		"/Users/josh/charmming/charmming/urls.json",
+		"/Users/josh/charmming/assets/js/dispatchers/LoadTasks.js",
+		"/Users/josh/charmming/assets/js/actions/ToggleLoading.js",
+		"/Users/josh/charmming/assets/js/components/JobStatus.js",
+		"/Users/josh/charmming/assets/js/actions/Login.js",
+		"/Users/josh/charmming/assets/js/actions/SetTasks.js",
+		"/Users/josh/charmming/charmming/models/Task.py",
+		"/Users/josh/charmming/charmming/views/StructuresView.py",
+		"/Users/josh/charmming/charmming/views/TaskView.py",
+		"/Users/josh/charmming/assets/js/dispatchers/Login.js",
+		"/Users/josh/charmming/assets/js/dispatchers/Logout.js",
+		"/Users/josh/charmming/charmming/utils/notifications.py",
+		"/Users/josh/charmming/assets/js/actions/LoadStructures.js",
+		"/Users/josh/charmming/assets/js/dispatchers/Notification.js",
+		"/Users/josh/charmming/assets/js/actions/LoadTasks.js",
+		"/Users/josh/charmming/assets/js/utils/string.js",
+		"/Users/josh/charmming/charmming/views/LoginView.py",
+		"/Users/josh/git-repos/stylelint_d/lib/server.js",
+		"/Users/josh/git-repos/stylelint_d/bin/stylelint_d.js",
+		"/Users/josh/git-repos/stylelint_d/package.json",
+		"/Users/josh/git-repos/stylelint_d/README.md",
+		"/Users/josh/git-repos/stylelint_d/lib/utils.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/stores/CurrentCollectionStore.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/actions/DataManagerUIActionCreators.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/stores/AssetStore.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/components/Pane.jsx",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/actions/AllStylesTabActionCreators.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/stores/AllStylesStore.js",
+		"/Users/josh/git-repos/webflow/public/js/editor/stores/EditorSiteStore.js",
+		"/Users/josh/git-repos/webflow/public/js/designer-flux/stores/ConfirmStore.js",
+		"/Users/josh/charmming/assets/js/components/StatefulComponent.js",
+		"/Users/josh/charmming/assets/js/components/Viewer.js",
+		"/Users/josh/charmming/assets/js/App.dev.js",
+		"/Users/josh/charmming/charmming/mixins/PreDispatchMixin.py",
+		"/Users/josh/charmming/charmming/views/StructureView.py",
+		"/Users/josh/charmming/charmming/mixins/LatencyMixin.py",
+		"/Users/josh/charmming/templates/html/app.html",
+		"/Users/josh/charmming/charmming/settings/base.py",
+		"/Users/josh/charmming/charmming/utils/structure.py",
+		"/Users/josh/charmming/charmming/utils/cg_structure.py",
+		"/Users/josh/charmming/charmming/utils/segment.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/sp.py",
+		"/Users/josh/charmming/charmming/validators/qchem/Symmetry.py",
+		"/Users/josh/charmming/charmming/utils/validator.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/opt.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/force.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/__init__.py",
+		"/Users/josh/charmming/charmming/utils/rcsb.py",
+		"/Users/josh/charmming/charmming/views/JobBaseView.py",
+		"/Users/josh/charmming/charmming/jobs/Job.py",
+		"/Users/josh/charmming/.gitignore",
+		"/Users/josh/charmming/charmming/models/Patch.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/templates/force.inp",
+		"/Users/josh/charmming/charmming/jobs/qchem/templates/opt.inp",
+		"/Users/josh/charmming/charmming/views/QchemView.py",
+		"/Users/josh/charmming/charmming/utils/cg_working_structure.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/templates/base.inp",
+		"/Users/josh/charmming/files/45/go.rtf",
+		"/Users/josh/charmming/charmming/models/Lesson5.py",
+		"/Users/josh/charmming/charmming/charmming_config.py",
+		"/Users/josh/charmming/charmming/mixins/APIMixin.py",
+		"/Users/josh/charmming/templates/input_scripts/seqtopdb.inp",
+		"/Users/josh/charmming/charmming/utils/task.py",
+		"/Users/josh/charmming/charmming/jobs/qchem/templates/sp.inp",
+		"/Users/josh/charmming/charmming/validators/qchem/__init__.py",
+		"/Users/josh/charmming/charmming/mixins/AuthMixin.py",
+		"/Users/josh/charmming/charmming/utils/qchem.py",
+		"/Users/josh/charmming/charmming/jobs/charmm/__init__.py",
+		"/Users/josh/charmming/charmming/validators/qchem/Exchange.py",
+		"/Users/josh/charmming/charmming/validators/qchem/BasisSet.py",
+		"/Users/josh/charmming/charmming/validators/charmm/Base.py",
+		"/Users/josh/charmming/charmming/validators/__init__.py",
+		"/Users/josh/charmming/templates/input_scripts/qchem_job.inp"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/Users/josh/git-repos/webflow/public/js/designer-flux",
+			"",
+			"*.py,*.inp",
+			"",
+			"*.py",
+			"",
+			"*.inp",
+			"*.py",
+			"",
+			"-/Users/josh/charmming/charmming/lib/*,-/Users/josh/charmming/unused/*,*.py",
+			"-/Users/josh/charmming/charmming/lib/*,-/Users/josh/charmming/unused/*",
+			"-/Users/josh/charmming/charmming/lib/*,-/Users/josh/charmming/charmming/unused/*",
+			"-/Users/josh/charmming/charmming/lib/*",
+			"-/Users/josh/charmming/charmming/lib",
+			"*.py",
+			"",
+			"*.js",
+			"",
+			"/Users/josh/charmming-base/CHARMM/charmm",
+			"",
+			"*.psf",
+			"*.prm",
+			"*.src",
+			"*.inp",
+			"*.rtf",
+			"*.inp",
+			"*.src",
+			"*.psf",
+			"*.src",
+			"*.rtf",
+			"*.src",
+			"",
+			"*.psf",
+			"*.rtf",
+			"*.prm",
+			"*.rtf",
+			"*.src",
+			"*.rtf",
+			"*.psf",
+			"*.rtf",
+			"*.psf",
+			"*.rtf",
+			"*.psf",
+			"*.rtf",
+			"*.src",
+			"",
+			"*.js",
+			"*.py",
+			"",
+			"*.js",
+			"*.py",
+			"*.pi",
+			"",
+			"*.js",
+			"*.html",
+			"*.py",
+			".py",
+			"*.py",
+			"",
+			"*.py",
+			"",
+			"*.py",
+			".py",
+			"*.py",
+			".py",
+			"",
+			"*.py",
+			"",
+			"*.py",
+			"",
+			"/Users/josh/git-repos",
+			"",
+			"<current file>",
+			".",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"MouseHandler",
+			"_mouseDoubleClick",
+			"symmetry.Assembly",
+			"exports.",
+			"var",
+			":",
+			"GRADIENTS.",
+			":",
+			"svd",
+			"debugger",
+			"updateNavigationState",
+			"setError",
+			"window.dispatchers",
+			"RealPageComponent",
+			"classnames",
+			"className='center'",
+			"prm.",
+			"rtf.",
+			"is_very_bad",
+			"rtf",
+			"order_by",
+			"socketIo",
+			"render",
+			"validCommand",
+			"Could not lint file",
+			"console.log",
+			"read",
+			"process.chdir",
+			"loading",
+			"getFieldUsage",
+			"CollectionClient",
+			"DYN_FIELD_DELETED",
+			"DYN_FIELD_SAVED",
+			"CollectionFieldList",
+			"CollectionFieldForm",
+			"Actions",
+			"uploadFileBlobsAndSetImage",
+			"importRemote",
+			"generateThumbnail",
+			"ASSET_THUMB_GENERATED",
+			"confirmDiscardChanges",
+			"DYN_COLLECTION_SELECTED",
+			"selectCollection",
+			"DYN_COLLECTION_SELECTED",
+			"TOGGLE_UNUSED_STYLES",
+			"CONFIRM_OPENED",
+			"STOPPED_EDITING_NODE",
+			"hbondstream",
+			"kbond",
+			"k_bond",
+			"KTGo",
+			"write_pychm",
+			"stderr=",
+			"type",
+			"structure.cg_model_type",
+			"new_data",
+			"1PRB",
+			"nscale",
+			"multiplicity",
+			"get_validator",
+			"basis",
+			"model_selected",
+			"forcefield_path",
+			"pv_view",
+			"from charmming.utils.task",
+			"deactivate_current_task",
+			"tamdfff",
+			"stream/toppar",
+			"toppar_all36_carb_glycolipid.str",
+			"stream",
+			"silicates",
+			"rush",
+			"toppar_water_ions_tip3p_pme_f.str",
+			"toppar_water_ions_tip4p.str",
+			"par_amber_98.inp",
+			"toppar_fcc_metals_2010.str",
+			"top_all22_prot_metals.inp",
+			"par_all22_prot_metals.inp",
+			"radius_gbsw.str",
+			"par_all22_prot_gbsw.inp",
+			"toppar_drude_master_jun12_model_cmpds.str",
+			"top_all30_cheq_prot.inp",
+			"par_all30_cheq_prot.inp",
+			"acepar27_na.inp",
+			"acepar22_prot.inp",
+			"acepar19.inp",
+			"toph19.inp",
+			"top_all36_na.rtf",
+			"top_all36_lipid.rtf",
+			"top_all36_carb.rtf",
+			"top_all35_ethers.rtf",
+			"param19.inp",
+			"par_hbond.inp",
+			"par_all36_lipid.prm",
+			"par_all36_carb.prm",
+			"par_all35_ethers.prm",
+			"par_all22_prot.prm",
+			"par_all35_ethers.prm",
+			"par_all22_prot_gbsw.inp",
+			"radius_gbsw.str",
+			"par_all22_prot_gbsw.inp",
+			"toppar_drude_positive_swm4_ions.str",
+			"toppar_drude_master_jun12_model_cmpds.str",
+			"top_all30_cheq_prot.inp",
+			"par_all30_cheq_prot.inp",
+			"acepar27_na.inp",
+			"acepar22_prot.inp",
+			"acepar19.inp",
+			"toph19.inp",
+			"top_all36_water_ions.rtf",
+			"top_all36_lipid.rtf",
+			"top_all36_carb.rtf",
+			"top_all35_ethers.rtf",
+			"param19.inp",
+			"par_hbond.inp",
+			"default_na_prm",
+			"par_all36_na.prm",
+			"par_all36_lipid.prm",
+			"par_all36_cgenff.prm",
+			"par_all36_carb.prm",
+			"par_all35_ethers.prm",
+			"par_all22_prot.prm",
+			"td['rtf']",
+			"par_all22_4fe4s_esp_090209",
+			"stride2pdb",
+			"savechrg.py",
+			"renumber.str",
+			"rename_dupes.py"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"get_model_from_pdb",
+			"get_model_from_crd",
+			"from pychm3",
+			"outformat",
+			"get_mol_from_crd",
+			"PDB",
+			"get_mol_from_pdb",
+			"import SchedInterface",
+			"lodash-es",
+			"parse",
+			"charmming.utils.schedd",
+			"scheduler",
+			"from charmming.utils.account import checkPermissions",
+			"(Task.Task)",
+			"views.lessons",
+			"models",
+			"from charmming.helpers.views",
+			"from charmming.utils.script",
+			"from charmming.utils.lesson",
+			"charmming.utils.atom_selection",
+			"utils.structure.aux",
+			"utils.task",
+			"utils.solvation",
+			"utils.solvation.ionization",
+			"legacy_models.dd_target",
+			"legacy_models.dd_substrate",
+			"legacy_models.dd_infrastructure",
+			"legacy_models.dd_analysis",
+			"utils.qsar.train",
+			"legacy_models.qsar",
+			"utils.assays.rest",
+			"utils.analysis",
+			"views.api",
+			"views.visualization",
+			"views.trajanal",
+			"charmming.views.structure",
+			"charmming.views.solvation",
+			"charmming.views.selection",
+			"charmming.views.qsar",
+			"charmming.views.qchem",
+			"charmming.views.propka",
+			"charmming.views.normalmodes",
+			"charmming.views.mutation",
+			"charmming.views.minimization",
+			"charmming.views.ligdes",
+			"charmming.views.lesson8",
+			"charmming.views.lesson7",
+			"charmming.views.lesson6",
+			"charmming.views.lesson5",
+			"charmming.views.lesson4",
+			"charmming.views.lesson3",
+			"charmming.views.lesson2",
+			"charmming.views.lesson1",
+			"charmming.views.dynamics",
+			"charmming.views.download",
+			"charmming.views.dossier",
+			"charmming.views.dd_target",
+			"charmming.views.dd_substrate",
+			"charmming.views.dd_infrastructure",
+			"charmming.views.assays",
+			"charmming.views.analysis",
+			"from charmming.views.account",
+			"from charmming.lessons.",
+			"from charmming.analysis",
+			"from charmming.statistics",
+			"from charmming.account",
+			"from django.conf.urls import patterns, url, include",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/viewpoint.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/traj.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2127,
+								2127
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/touch.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2684,
+								2684
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/slab.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 870,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/mouse.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4412,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/buffer-allocators.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 747,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 431,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6,
+								6
+							],
+							[
+								45,
+								45
+							],
+							[
+								282,
+								282
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": ".eslintrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1544,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1359,
+								1359
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Theme - Piatto/icons/Langs/npm JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mlvw.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"eslintrc",
+				".eslintrc"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"",
+				"~/charmming/node_modules/bio-pv/bio-pv.js"
+			],
+			[
+				"viewer",
+				"assets/js/components/Viewer.js"
+			],
+			[
+				"de",
+				"charmming/settings/development.py"
+			],
+			[
+				"mainpage",
+				"assets/js/pages/MainPage.js"
+			],
+			[
+				"sidena",
+				"assets/js/ui/SideNav.js"
+			],
+			[
+				"nav.js",
+				"assets/js/ui/Nav.js"
+			],
+			[
+				"logout",
+				"assets/js/dispatchers/Logout.js"
+			],
+			[
+				"contain",
+				"assets/js/ui/Container.js"
+			],
+			[
+				"build",
+				"build.js"
+			],
+			[
+				"dev",
+				"charmming/settings/development.py"
+			],
+			[
+				"buton.css",
+				"assets/css/Button.css"
+			],
+			[
+				"input",
+				"assets/css/Input.css"
+			],
+			[
+				"button.css",
+				"assets/css/Button.css"
+			],
+			[
+				"button",
+				"assets/js/components/Button.js"
+			],
+			[
+				"deve",
+				"charmming/settings/development.py"
+			],
+			[
+				"pagecom",
+				"assets/js/components/PageComponent.js"
+			],
+			[
+				"store.",
+				"assets/js/store.js"
+			],
+			[
+				"structur",
+				"charmming/models/Structure.py"
+			],
+			[
+				"naviga",
+				"assets/js/actions/NavigateTo.js"
+			],
+			[
+				"store.j",
+				"assets/js/store.js"
+			],
+			[
+				"handleinit",
+				"assets/js/actions/HandleInitialAuth.js"
+			],
+			[
+				"pagecont",
+				"assets/js/components/PageContainer.js"
+			],
+			[
+				"store",
+				"assets/js/store.js"
+			],
+			[
+				"fileuploadpage",
+				"assets/js/pages/FileuploadPage.js"
+			],
+			[
+				"struc",
+				"charmming/models/Structure.py"
+			],
+			[
+				"uploadviw",
+				"charmming/views/UploadView.py"
+			],
+			[
+				"extend",
+				"docker/charmming/Extended.dockerfile"
+			],
+			[
+				"viewer.js",
+				"assets/js/components/Viewer.js"
+			],
+			[
+				"structure.js",
+				"assets/js/pages/StructurePage.js"
+			],
+			[
+				"util/page",
+				"assets/js/utils/page.js"
+			],
+			[
+				"app.js",
+				"assets/js/App.js"
+			],
+			[
+				"sidenav",
+				"assets/js/ui/SideNav.js"
+			],
+			[
+				"watcher",
+				"watcher.js"
+			],
+			[
+				"build.",
+				"build.js"
+			],
+			[
+				"pagecon",
+				"assets/js/components/PageContainer.js"
+			],
+			[
+				"container",
+				"assets/js/ui/Container.js"
+			],
+			[
+				"createchildpa",
+				"assets/js/pages/CreateChildPage.js"
+			],
+			[
+				"struturepage",
+				"assets/js/pages/StructurePage.js"
+			],
+			[
+				"container.js",
+				"assets/js/ui/Container.js"
+			],
+			[
+				"index.c",
+				"assets/css/index.css"
+			],
+			[
+				"form.js",
+				"assets/js/components/Form.js"
+			],
+			[
+				"loginpage",
+				"assets/js/pages/LoginPage.js"
+			],
+			[
+				"page.css",
+				"assets/css/Page.css"
+			],
+			[
+				"base.css",
+				"assets/css/base.css"
+			],
+			[
+				"section.css",
+				"assets/css/Section.css"
+			],
+			[
+				"base.",
+				"assets/css/base.css"
+			],
+			[
+				"taskview",
+				"charmming/views/TaskView.py"
+			],
+			[
+				"segment.py",
+				"charmming/models/Segment.py"
+			],
+			[
+				".gitig",
+				".gitignore"
+			],
+			[
+				"task.py",
+				"charmming/models/Task.py"
+			],
+			[
+				"tasks",
+				"charmming/views/TasksView.py"
+			],
+			[
+				"baseview",
+				"charmming/views/BaseView.py"
+			],
+			[
+				"apimix",
+				"charmming/mixins/APIMixin.py"
+			],
+			[
+				"start.",
+				"start.sh"
+			],
+			[
+				"utils/log",
+				"charmming/utils/log.py"
+			],
+			[
+				"settings/dev",
+				"charmming/settings/development.py"
+			],
+			[
+				"settings/",
+				"charmming/settings/__init__.py"
+			],
+			[
+				"start",
+				"start.sh"
+			],
+			[
+				"settin/dev",
+				"charmming/settings/development.py"
+			],
+			[
+				"wsg",
+				"charmming/wsgi.py"
+			],
+			[
+				"utils/topp",
+				"charmming/utils/toppar.py"
+			],
+			[
+				"utils/bui",
+				"charmming/utils/build.py"
+			],
+			[
+				"utils/job",
+				"charmming/utils/job.py"
+			],
+			[
+				"job/__in",
+				"charmming/jobs/__init__.py"
+			],
+			[
+				"utils/residue",
+				"charmming/utils/residue.py"
+			],
+			[
+				"uti/segment",
+				"charmming/utils/segment.py"
+			],
+			[
+				"notification.js",
+				"assets/js/dispatchers/Notification.js"
+			],
+			[
+				"utils/noti",
+				"charmming/utils/notifications.py"
+			],
+			[
+				"notifi",
+				"notificationd/NotificationDaemon.py"
+			],
+			[
+				"notifica",
+				"notificationd/NotificationDaemon.py"
+			],
+			[
+				"valid/",
+				"charmming/validators/charmm/Minimization.py"
+			],
+			[
+				"index.css",
+				"assets/css/index.css"
+			],
+			[
+				"tasksview",
+				"charmming/views/TasksView.py"
+			],
+			[
+				"urls.json",
+				"charmming/urls.json"
+			],
+			[
+				"toggleloa",
+				"assets/js/actions/ToggleLoading.js"
+			],
+			[
+				"loadtasks",
+				"assets/js/dispatchers/LoadTasks.js"
+			],
+			[
+				"actio/login",
+				"assets/js/actions/Login.js"
+			],
+			[
+				"settasks",
+				"assets/js/actions/SetTasks.js"
+			],
+			[
+				"task.p",
+				"charmming/models/Task.py"
+			],
+			[
+				"structuresview",
+				"charmming/views/StructuresView.py"
+			],
+			[
+				"dis/ogin",
+				"assets/js/dispatchers/Login.js"
+			],
+			[
+				"loginpa",
+				"assets/js/pages/LoginPage.js"
+			],
+			[
+				"jobst",
+				"assets/js/components/JobStatus.js"
+			],
+			[
+				"string",
+				"assets/js/utils/string.js"
+			],
+			[
+				"ac/login",
+				"assets/js/actions/Login.js"
+			],
+			[
+				"login.js",
+				"assets/js/dispatchers/Login.js"
+			],
+			[
+				"disp/handle",
+				"assets/js/dispatchers/HandleInitialAuth.js"
+			],
+			[
+				"handlei",
+				"assets/js/actions/HandleInitialAuth.js"
+			],
+			[
+				"uti/notifi",
+				"charmming/utils/notifications.py"
+			],
+			[
+				"notifda",
+				"notificationd/NotificationDaemon.py"
+			],
+			[
+				"start.sh",
+				"start.sh"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"loginviw",
+				"charmming/views/LoginView.py"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"utils",
+				"lib/utils.js"
+			],
+			[
+				"stylelint_d",
+				"bin/stylelint_d.js"
+			],
+			[
+				"view.jsx",
+				"public/js/designer-flux/components/View.jsx"
+			],
+			[
+				"collectionclient",
+				"public/js/designer-flux/clients/CollectionClient.js"
+			],
+			[
+				"collectionfieldaction",
+				"public/js/designer-flux/actions/CollectionFieldActionCreators.js"
+			],
+			[
+				"errorutil",
+				"public/js/designer-flux/utils/ErrorUtils.js"
+			],
+			[
+				"pane.jsx",
+				"public/js/designer-flux/components/Pane.jsx"
+			],
+			[
+				"stores/",
+				"public/js/designer-flux/stores/AllStylesStore.js"
+			],
+			[
+				"act/login",
+				"assets/js/actions/Login.js"
+			],
+			[
+				"statefulco",
+				"assets/js/components/StatefulComponent.js"
+			],
+			[
+				"button.js",
+				"assets/js/components/Button.js"
+			],
+			[
+				"index.",
+				"assets/css/index.css"
+			],
+			[
+				"structurepage",
+				"assets/js/pages/StructurePage.js"
+			],
+			[
+				"urls.py",
+				"charmming/urls.py"
+			],
+			[
+				"predis",
+				"charmming/mixins/PreDispatchMixin.py"
+			],
+			[
+				"deletestr",
+				"assets/js/actions/DeleteStructure.js"
+			],
+			[
+				"late",
+				"charmming/mixins/LatencyMixin.py"
+			],
+			[
+				"develop",
+				"charmming/settings/development.py"
+			],
+			[
+				"develope",
+				"charmming/settings/development.py"
+			],
+			[
+				"predps",
+				"charmming/mixins/PreDispatchMixin.py"
+			],
+			[
+				"app.html",
+				"templates/html/app.html"
+			],
+			[
+				"build.js",
+				"build.js"
+			],
+			[
+				"utils/cg_str",
+				"charmming/utils/cg_structure.py"
+			],
+			[
+				"utils/segment",
+				"charmming/utils/segment.py"
+			],
+			[
+				"structureview",
+				"charmming/views/StructureView.py"
+			],
+			[
+				"utils/structure",
+				"charmming/utils/structure.py"
+			],
+			[
+				"patch.",
+				"charmming/models/Patch.py"
+			],
+			[
+				"segmeny",
+				"charmming/models/Segment.py"
+			],
+			[
+				"utils/cg_stru",
+				"charmming/utils/cg_structure.py"
+			],
+			[
+				"char_confi",
+				"charmming/charmming_config.py"
+			],
+			[
+				"apimixi",
+				"charmming/mixins/APIMixin.py"
+			],
+			[
+				"seqto",
+				"templates/input_scripts/seqtopdb.inp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 1142.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 252.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

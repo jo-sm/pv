@@ -1,73 +1,59 @@
 {
-  "name": "bio-pv",
-  "version": "1.9.0dev",
-  "description": "WebGL protein viewer ",
-  "homepage": "https://github.com/biasmv/pv",
+  "name": "mlvw",
+  "version": "1.0.0",
+  "description": "WebGL molecule viewer for es6",
+  "homepage": "https://github.com/jo-sm/mlvw",
   "author": {
-    "name": "Marco Biasini"
+    "name": "Joshua Smock"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/biasmv/pv.git"
+    "url": "git://github.com/jo-sm/mlvw.git"
   },
   "bugs": {
-    "url": "https://github.com/biasmv/pv/issues"
+    "url": "https://github.com/jo-sm/mlvw/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/biasmv/pv/blob/master/LICENSE.txt"
+      "url": "https://github.com/jo-sm/mlvw/blob/master/LICENSE.txt"
     }
   ],
-  "main": "bio-pv.js",
-
+  "main": "src/index.js",
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-uglify": "~0.2.2",
-    "grunt-remove-logging": "~0.2.0",
-    "grunt-contrib-requirejs": "~0.4.4",
-    "mkdirp": "^0.5.0",
-    "amdclean": "~2.4.0"
-  },
-  "optionalDependencies": {
-    "browserify": "^9.0.8",
-    "sniper": "^0.2.16"
-  },
-  "sniper": {
-    "js": [
-      "/js/bio-pv.browserify.js"
-    ],
-    "buildJS": [],
-    "first": "simple",
-    "snippets": [
-      "snippets"
-    ]
-  },
-  "scripts": {
-    "prepublish": "scripts/make.sh",
-    "build-biojs": "browserify -r ./:bio-pv > js/bio-pv.browserify.js"
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "eslint": "^3.19.0",
+    "eslint_d": "^4.2.5",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "uglify-js": "^3.0.13"
   },
   "files": [
     "README.md",
-    "bio-pv.js",
-    "bio-pv.min.js",
-    "bower.json",
+    "mlvw.js",
+    "mlvw.min.js",
     "LICENSE.txt",
     "snippets",
     "pdbs",
-    "js/jquery-2.0.2.min.js",
-    "js/jquery-ui.min.js",
-    "js/bio-pv.browserify.js",
-    "js/modernizr-2.8.3.min.js",
-    "foundation-5.4.7.min.js",
     "package.json"
   ],
+  "scripts": {
+    "build": "rollup -c; uglifyjs --compress --mangle --verbose --output mlvw.min.js mlvw.js"
+  },
   "keywords": [
     "protein",
     "3d",
     "webgl",
     "biojs"
-  ]
+  ],
+  "dependencies": {
+    "@mapbox/gl-matrix": "0.0.1"
+  }
 }

@@ -1,5 +1,3 @@
-define(function() {
-
 function fulfillsPredicates(obj, predicates) {
   for (var i = 0; i < predicates.length; ++i) {
     if (!predicates[i](obj)) {
@@ -18,7 +16,7 @@ function _atomPredicates(dict) {
     predicates.push(function(a) { return a.isHetatm() === dict.hetatm; });
   }
   if (dict.anames !== undefined) {
-    predicates.push(function(a) { 
+    predicates.push(function(a) {
       var n = a.name();
       for (var k = 0; k < dict.anames.length; ++k) {
         if (n === dict.anames[k]) {
@@ -31,7 +29,7 @@ function _atomPredicates(dict) {
   return predicates;
 }
 
-// extracts the residue predicates from the dictionary. 
+// extracts the residue predicates from the dictionary.
 // ignores rindices, rindexRange because they are handled separately.
 function _residuePredicates(dict) {
   var predicates = [];
@@ -39,10 +37,10 @@ function _residuePredicates(dict) {
     predicates.push(function(r) { return r.name() === dict.rname; });
   }
   if (dict.rnames !== undefined) {
-    predicates.push(function(r) { 
-    var n = r.name();
-    for (var k = 0; k < dict.rnames.length; ++k) {
-      if (n === dict.rnames[k]) {
+    predicates.push(function(r) {
+      var n = r.name();
+      for (var k = 0; k < dict.rnames.length; ++k) {
+        if (n === dict.rnames[k]) {
           return true;
         }
       }
@@ -84,7 +82,7 @@ function _chainPredicates(dict) {
     predicates.push(function(c) { return c.name() === dict.chain; });
   }
   if (dict.chains !== undefined) {
-    predicates.push(function(c) { 
+    predicates.push(function(c) {
       var n = c.name();
       for (var k = 0; k < dict.chains.length; ++k) {
         if (n === dict.chains[k]) {
@@ -103,10 +101,12 @@ function _chainPredicates(dict) {
 function _filterResidues(chain, dict) {
   var residues = chain.residues();
   if (dict.rnumRange) {
-    residues =
-        chain.residuesInRnumRange(dict.rnumRange[0], dict.rnumRange[1]);
+    residues = chain.residuesInRnumRange(dict.rnumRange[0], dict.rnumRange[1]);
   }
-  var selResidues = [], i, e;
+
+  var selResidues = [];
+  var i;
+  var e;
   if (dict.rindexRange !== undefined) {
     for (i = dict.rindexRange[0],
         e = Math.min(residues.length - 1, dict.rindexRange[1]);
@@ -114,7 +114,7 @@ function _filterResidues(chain, dict) {
       selResidues.push(residues[i]);
     }
     return selResidues;
-  } 
+  }
   if (dict.rindices) {
     if (dict.rindices.length !== undefined) {
       selResidues = [];
@@ -128,7 +128,7 @@ function _filterResidues(chain, dict) {
 }
 
 // helper function to perform selection by predicates
-function dictSelect(structure, view, dict) {
+export function dictSelect(structure, view, dict) {
   var residuePredicates = _residuePredicates(dict);
   var atomPredicates = _atomPredicates(dict);
   var chainPredicates = _chainPredicates(dict);
@@ -167,7 +167,7 @@ function dictSelect(structure, view, dict) {
 }
 
 
-function polymerSelect(structure, view) {
+export function polymerSelect(structure, view) {
   for (var ci = 0; ci < structure._chains.length; ++ci) {
     var chain = structure._chains[ci];
     var traces = chain.backboneTraces();
@@ -185,9 +185,3 @@ function polymerSelect(structure, view) {
   return view;
 }
 
-return {
-  dict : dictSelect,
-  polymer : polymerSelect
-};
-
-});

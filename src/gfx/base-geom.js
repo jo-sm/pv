@@ -1,37 +1,5 @@
-// Copyright (c) 2013-2015 Marco Biasini
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
-
-define(
-  [
-    '../utils', 
-    '../gl-matrix', 
-    './scene-node'
-  ], 
-  function(
-    utils, 
-    glMatrix, 
-    SceneNode) {
-
-"use strict";
-
-var vec3 = glMatrix.vec3;
+import { vec3 } from '@mapbox/gl-matrix';
+import SceneNode from './scene-node';
 
 function eachCentralAtomAsym(structure, callback) {
   structure.eachResidue(function(residue) {
@@ -43,52 +11,51 @@ function eachCentralAtomAsym(structure, callback) {
   });
 }
 
-var eachCentralAtomSym = (function() {
+var eachCentralAtomSym = function(structure, gens, callback) {
   var transformedPos = vec3.create();
-  return function(structure, gens, callback) {
-    for (var i = 0; i < gens.length; ++i) {
-      var gen = gens[i];
-      var chains = structure.chainsByName(gen.chains());
-      for (var j = 0; j < gen.matrices().length; ++j) {
-        var matrix = gen.matrix(j);
-        for (var k = 0; k < chains.length; ++k) {
-          var chain = chains[k];
-          for (var l = 0; l < chain.residues().length; ++l) {
-            var centralAtom = chain.residues()[l].centralAtom();
-            if (centralAtom === null) {
-              continue;
-            }
-            vec3.transformMat4(transformedPos, centralAtom.pos(), matrix);
-            callback(centralAtom, transformedPos);
+  for (var i = 0; i < gens.length; ++i) {
+    var gen = gens[i];
+    var chains = structure.chainsByName(gen.chains());
+    for (var j = 0; j < gen.matrices().length; ++j) {
+      var matrix = gen.matrix(j);
+      for (var k = 0; k < chains.length; ++k) {
+        var chain = chains[k];
+        for (var l = 0; l < chain.residues().length; ++l) {
+          var centralAtom = chain.residues()[l].centralAtom();
+          if (centralAtom === null) {
+            continue;
           }
+          vec3.transformMat4(transformedPos, centralAtom.pos(), matrix);
+          callback(centralAtom, transformedPos);
         }
       }
     }
-  };
-})();
+  }
+};
 
-function BaseGeom(gl) {
-  SceneNode.call(this, gl);
-  this._idRanges = [];
-  this._vertAssocs = [];
-  this._showRelated = null;
-  this._selection = null;
-}
+export default class BaseGeom extends SceneNode {
+  constructor(gl) {
+    super(gl);
 
-utils.derive(BaseGeom, SceneNode, {
-  setShowRelated : function(rel) {
+    this._idRanges = [];
+    this._vertAssocs = [];
+    this._showRelated = null;
+    this._selection = null;
+  }
+
+  setShowRelated(rel) {
     if (rel && rel !== 'asym') {
       if (this.structure().assembly(rel) === null) {
-        console.error('no assembly with name', rel, 
+        console.error('no assembly with name', rel,
                       '. Falling back to asymmetric unit');
         return;
       }
     }
     this._showRelated = rel;
     return rel;
-  },
+  }
 
-  symWithIndex : function(index) {
+  symWithIndex(index) {
     if (this.showRelated() === 'asym') {
       return null;
     }
@@ -97,45 +64,44 @@ utils.derive(BaseGeom, SceneNode, {
       return null;
     }
     var gen = assembly.generators();
-    for (var i = 0 ; i < gen.length; ++i) {
+    for (var i = 0; i < gen.length; ++i) {
       if (gen[i].matrices().length > index) {
         return gen[i].matrix(index);
       }
       index -= gen[i].matrices().length;
     }
     return null;
-  },
+  }
 
-  showRelated : function() {
+  showRelated() {
     return this._showRelated;
-  },
+  }
 
-  select : function(what) {
+  select(what) {
     return this.structure().select(what);
-  },
+  }
 
-  structure : function() {
+  structure() {
     return this._vertAssocs[0]._structure;
-  },
+  }
 
-
-  getColorForAtom : function(atom, color) {
+  getColorForAtom(atom, color) {
     // FIXME: what to do in case there are multiple assocs?
     return this._vertAssocs[0].getColorForAtom(atom, color);
-  },
+  }
 
-  addIdRange : function(range) {
+  addIdRange(range) {
     this._idRanges.push(range);
-  },
+  }
 
-  destroy : function() {
+  destroy() {
     SceneNode.prototype.destroy.call(this);
     for (var i = 0; i < this._idRanges.length; ++i) {
       this._idRanges[i].recycle();
     }
-  },
+  }
 
-  eachCentralAtom : function(callback) {
+  eachCentralAtom(callback) {
     var go = this;
     var structure = go.structure();
     var assembly = structure.assembly(go.showRelated());
@@ -145,17 +111,17 @@ utils.derive(BaseGeom, SceneNode, {
       return eachCentralAtomAsym(structure, callback);
     }
     return eachCentralAtomSym(structure, assembly.generators(), callback);
-  },
+  }
 
-  addVertAssoc : function(assoc) {
+  addVertAssoc(assoc) {
     this._vertAssocs.push(assoc);
-  },
+  }
 
   // returns all vertex arrays that contain geometry for one of the specified
   // chain names. Typically, there will only be one array for a given chain,
   // but for larger chains with mesh geometries a single chain may be split
   // across multiple vertex arrays.
-  _vertArraysInvolving : function(chains) {
+  _vertArraysInvolving(chains) {
     var vertArrays = this.vertArrays();
     var selectedArrays = [];
     var set = {};
@@ -168,39 +134,34 @@ utils.derive(BaseGeom, SceneNode, {
       }
     }
     return selectedArrays;
-  },
-
+  }
 
   // draws vertex arrays by using the symmetry generators contained in assembly
-  _drawSymmetryRelated : function(cam, shader, assembly) {
+  _drawSymmetryRelated(cam, shader, assembly) {
     var gens = assembly.generators();
     for (var i = 0; i < gens.length; ++i) {
       var gen = gens[i];
       var affectedVAs = this._vertArraysInvolving(gen.chains());
       this._drawVertArrays(cam, shader, affectedVAs, gen.matrices());
     }
-  },
+  }
 
-  _updateProjectionIntervalsAsym : 
-      function(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval) {
-      var vertArrays = this.vertArrays();
-      for (var i = 0; i < vertArrays.length; ++i) {
-        vertArrays[i].updateProjectionIntervals(xAxis, yAxis, zAxis, xInterval, 
-                                                yInterval, zInterval);
-      }
-  },
+  _updateProjectionIntervalsAsym(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval) {
+    var vertArrays = this.vertArrays();
+    for (var i = 0; i < vertArrays.length; ++i) {
+      vertArrays[i].updateProjectionIntervals(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval);
+    }
+  }
 
-  updateProjectionIntervals :
-      function(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval) {
+  updateProjectionIntervals(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval) {
     if (!this._visible) {
       return;
     }
+
     var showRelated = this.showRelated();
     if (showRelated === 'asym') {
-      return this._updateProjectionIntervalsAsym(xAxis, yAxis, zAxis, 
-                                                 xInterval, yInterval, 
-                                                 zInterval);
-    } 
+      return this._updateProjectionIntervalsAsym(xAxis, yAxis, zAxis, xInterval, yInterval, zInterval);
+    }
     var assembly = this.structure().assembly(showRelated);
     // in case there is no assembly, fallback to asymmetric unit and bail out.
     var gens = assembly.generators();
@@ -210,32 +171,32 @@ utils.derive(BaseGeom, SceneNode, {
       for (var j = 0; j < gen.matrices().length; ++j) {
         for (var k = 0; k < affectedVAs.length; ++k) {
           var transform = gen.matrix(j);
-          affectedVAs[k].updateProjectionIntervals(xAxis, yAxis, zAxis, 
-                                                   xInterval, yInterval, 
+          affectedVAs[k].updateProjectionIntervals(xAxis, yAxis, zAxis,
+                                                   xInterval, yInterval,
                                                    zInterval, transform);
         }
       }
     }
-  },
+  }
 
-  // FIXME: investigate the performance cost of sharing code between 
-  // updateSquaredSphereRadius and updateProjectionIntervals 
-  _updateSquaredSphereRadiusAsym : function(center, radius) {
-      var vertArrays = this.vertArrays();
-      for (var i = 0; i < vertArrays.length; ++i) {
-        radius = vertArrays[i].updateSquaredSphereRadius(center, radius);
-      }
-      return radius;
-  },
+  // FIXME: investigate the performance cost of sharing code between
+  // updateSquaredSphereRadius and updateProjectionIntervals
+  _updateSquaredSphereRadiusAsym(center, radius) {
+    var vertArrays = this.vertArrays();
+    for (var i = 0; i < vertArrays.length; ++i) {
+      radius = vertArrays[i].updateSquaredSphereRadius(center, radius);
+    }
+    return radius;
+  }
 
-  updateSquaredSphereRadius : function(center, radius) {
+  updateSquaredSphereRadius(center, radius) {
     if (!this._visible) {
       return radius;
     }
     var showRelated = this.showRelated();
     if (showRelated === 'asym') {
       return this._updateSquaredSphereRadiusAsym(center, radius);
-    } 
+    }
     var assembly = this.structure().assembly(showRelated);
     var gens = assembly.generators();
     for (var i = 0; i < gens.length; ++i) {
@@ -250,9 +211,9 @@ utils.derive(BaseGeom, SceneNode, {
       }
     }
     return radius;
-  },
+  }
 
-  draw : function(cam, shaderCatalog, style, pass) {
+  draw(cam, shaderCatalog, style, pass) {
 
     if (!this._visible) {
       return;
@@ -266,13 +227,13 @@ utils.derive(BaseGeom, SceneNode, {
     var showRelated = this.showRelated();
     if (showRelated === 'asym') {
       return this._drawVertArrays(cam, shader, this.vertArrays(), null);
-    } 
+    }
 
     var assembly = this.structure().assembly(showRelated);
     return this._drawSymmetryRelated(cam, shader, assembly);
-  },
+  }
 
-  colorBy : function(colorFunc, view) {
+  colorBy(colorFunc, view) {
     console.time('BaseGeom.colorBy');
     this._ready = false;
     view = view || this.structure();
@@ -280,9 +241,9 @@ utils.derive(BaseGeom, SceneNode, {
       this._vertAssocs[i].recolor(colorFunc, view);
     }
     console.timeEnd('BaseGeom.colorBy');
-  },
+  }
 
-  setOpacity : function(val, view) {
+  setOpacity(val, view) {
     console.time('BaseGeom.setOpacity');
     this._ready = false;
     view = view || this.structure();
@@ -290,8 +251,9 @@ utils.derive(BaseGeom, SceneNode, {
       this._vertAssocs[i].setOpacity(val, view);
     }
     console.timeEnd('BaseGeom.setOpacity');
-  },
-  setSelection : function(view) {
+  }
+
+  setSelection(view) {
     console.time('BaseGeom.setSelection');
     this._selection = view;
     this._ready = false;
@@ -299,18 +261,12 @@ utils.derive(BaseGeom, SceneNode, {
       this._vertAssocs[i].setSelection(view);
     }
     console.timeEnd('BaseGeom.setSelection');
-  },
-   selection : function() {
-     if (this._selection === null) {
-       this._selection = this.structure().createEmptyView();
-     }
-     return this._selection;
-   }
-});
+  }
 
-
-return BaseGeom;
-
-});
-
-
+  selection() {
+    if (this._selection === null) {
+      this._selection = this.structure().createEmptyView();
+    }
+    return this._selection;
+  }
+}

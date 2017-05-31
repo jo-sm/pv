@@ -1,58 +1,120 @@
-// Copyright (c) 2013-2015 Marco Biasini
-// 
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to 
-// deal in the Software without restriction, including without limitation the 
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or 
-// sell copies of the Software, and to permit persons to whom the Software is 
-// furnished to do so, subject to the following conditions:
-// 
-// The above copyright notice and this permission notice shall be included in 
-// all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING 
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
-// DEALINGS IN THE SOFTWARE.
+import { vec3 } from '@mapbox/gl-matrix';
 
-define(['gl-matrix', 'utils', '../geom', './chain', './bond', './select'], 
-       function(glMatrix, utils, geom, chain, bond, select) {
+import { Chain, ChainView } from './chain';
+import { Bond } from './bond';
 
-"use strict";
-
-var vec3 = glMatrix.vec3;
-
-var Chain = chain.Chain;
-var ChainView = chain.ChainView;
-var Bond = bond.Bond;
-
-// atom covalent radii by element derived from Cambrige Structural Database. 
+// atom covalent radii by element derived from Cambrige Structural Database.
 // Source: http://profmokeur.ca/chemistry/covalent_radii.htm
-var ELEMENT_COVALENT_RADII = {
- H : 0.31, HE : 0.28, LI : 1.28, BE : 0.96,  B : 0.84,  C : 0.76,  N : 0.71, 
- O : 0.66,  F : 0.57, NE : 0.58, NA : 1.66, MG : 1.41, AL : 1.21, SI : 1.11, 
- P : 1.07,  S : 1.05, CL : 1.02, AR : 1.06,  K : 2.03, CA : 1.76, SC : 1.70, 
-TI : 1.60,  V : 1.53, CR : 1.39, MN : 1.39, FE : 1.32, CO : 1.26, NI : 1.24, 
-CU : 1.32, ZN : 1.22, GA : 1.22, GE : 1.20, AS : 1.19, SE : 1.20, BR : 1.20, 
-KR : 1.16, RB : 2.20, SR : 1.95,  Y : 1.90, ZR : 1.75, NB : 1.64, MO : 1.54, 
-TC : 1.47, RU : 1.46, RH : 1.42, PD : 1.39, AG : 1.45, CD : 1.44, IN : 1.42, 
-SN : 1.39, SB : 1.39, TE : 1.38,  I : 1.39, XE : 1.40, CS : 2.44, BA : 2.15, 
-LA : 2.07, CE : 2.04, PR : 2.03, ND : 2.01, PM : 1.99, SM : 1.98, EU : 1.98, 
-GD : 1.96, TB : 1.94, DY : 1.92, HO : 1.92, ER : 1.89, TM : 1.90, YB : 1.87, 
-LU : 1.87, HF : 1.75, TA : 1.70,  W : 1.62, RE : 1.51, OS : 1.44, IR : 1.41, 
-PT : 1.36, AU : 1.36, HG : 1.32, TL : 1.45, PB : 1.46, BI : 1.48, PO : 1.40, 
-AT : 1.50, RN : 1.50, FR : 2.60, RA : 2.21, AC : 2.15, TH : 2.06, PA : 2.00, 
- U : 1.96, NP : 1.90, PU : 1.87, AM : 1.80, CM : 1.69
+const ELEMENT_COVALENT_RADII = {
+  H: 0.31,
+  HE: 0.28,
+  LI: 1.28,
+  BE: 0.96,
+  B: 0.84,
+  C: 0.76,
+  N: 0.71,
+  O: 0.66,
+  F: 0.57,
+  NE: 0.58,
+  NA: 1.66,
+  MG: 1.41,
+  AL: 1.21,
+  SI: 1.11,
+  P: 1.07,
+  S: 1.05,
+  CL: 1.02,
+  AR: 1.06,
+  K: 2.03,
+  CA: 1.76,
+  SC: 1.70,
+  TI: 1.60,
+  V: 1.53,
+  CR: 1.39,
+  MN: 1.39,
+  FE: 1.32,
+  CO: 1.26,
+  NI: 1.24,
+  CU: 1.32,
+  ZN: 1.22,
+  GA: 1.22,
+  GE: 1.20,
+  AS: 1.19,
+  SE: 1.20,
+  BR: 1.20,
+  KR: 1.16,
+  RB: 2.20,
+  SR: 1.95,
+  Y: 1.90,
+  ZR: 1.75,
+  NB: 1.64,
+  MO: 1.54,
+  TC: 1.47,
+  RU: 1.46,
+  RH: 1.42,
+  PD: 1.39,
+  AG: 1.45,
+  CD: 1.44,
+  IN: 1.42,
+  SN: 1.39,
+  SB: 1.39,
+  TE: 1.38,
+  I: 1.39,
+  XE: 1.40,
+  CS: 2.44,
+  BA: 2.15,
+  LA: 2.07,
+  CE: 2.04,
+  PR: 2.03,
+  ND: 2.01,
+  PM: 1.99,
+  SM: 1.98,
+  EU: 1.98,
+  GD: 1.96,
+  TB: 1.94,
+  DY: 1.92,
+  HO: 1.92,
+  ER: 1.89,
+  TM: 1.90,
+  YB: 1.87,
+  LU: 1.87,
+  HF: 1.75,
+  TA: 1.70,
+  W: 1.62,
+  RE: 1.51,
+  OS: 1.44,
+  IR: 1.41,
+  PT: 1.36,
+  AU: 1.36,
+  HG: 1.32,
+  TL: 1.45,
+  PB: 1.46,
+  BI: 1.48,
+  PO: 1.40,
+  AT: 1.50,
+  RN: 1.50,
+  FR: 2.60,
+  RA: 2.21,
+  AC: 2.15,
+  TH: 2.06,
+  PA: 2.00,
+  U: 1.96,
+  NP: 1.90,
+  PU: 1.87,
+  AM: 1.80,
+  CM: 1.69
 };
 
 function covalentRadius(ele) {
-  var r = ELEMENT_COVALENT_RADII[ele.toUpperCase()];
-  if (r !== undefined) {
+  if (!ele) {
+    return null;
+  }
+
+  const r = ELEMENT_COVALENT_RADII[ele.toUpperCase()];
+
+  if (r) {
     return r;
   }
+
   return 1.5;
 }
 
@@ -64,7 +126,7 @@ function connectPeptides(structure, left, right) {
     if (sqrDist < 1.6*1.6) {
       structure.connect(nAtom, cAtom);
     }
-  } 
+  }
 }
 
 function connectNucleotides(structure, left, right) {
@@ -79,19 +141,16 @@ function connectNucleotides(structure, left, right) {
   }
 }
 
-function MolBase() {
-}
-
-MolBase.prototype = {
-  eachResidue : function(callback) {
+class MolBase {
+  eachResidue(callback) {
     for (var i = 0; i < this._chains.length; i+=1) {
       if (this._chains[i].eachResidue(callback) === false) {
         return false;
       }
     }
-  },
+  }
 
-  eachAtom : function(callback, index) {
+  eachAtom(callback, index) {
     index |= 0;
     for (var i = 0; i < this._chains.length; i+=1) {
       index = this._chains[i].eachAtom(callback, index);
@@ -99,42 +158,42 @@ MolBase.prototype = {
         return false;
       }
     }
-  },
+  }
 
-  residueCount : function () {
+  residueCount() {
     var chains = this.chains();
     var count = 0;
     for (var ci = 0; ci < chains.length; ++ci) {
       count += chains[ci].residues().length;
     }
     return count;
-  },
+  }
 
-  eachChain : function(callback) {
+  eachChain(callback) {
     var chains = this.chains();
     for (var i = 0; i < chains.length; ++i) {
       if (callback(chains[i]) === false) {
         return;
       }
     }
-  },
+  }
 
-  atomCount : function() {
+  atomCount() {
     var chains = this.chains();
     var count = 0;
     for (var ci = 0; ci < chains.length; ++ci) {
       count += chains[ci].atomCount();
     }
     return count;
-  },
+  }
 
-  atoms : function() {
+  atoms() {
     var atoms = [];
     this.eachAtom(function(atom) { atoms.push(atom); });
     return atoms;
-  },
+  }
 
-  atom : function(name) {
+  atom(name) {
     var parts = name.split('.');
     var chain = this.chain(parts[0]);
     if (chain === null) {
@@ -145,9 +204,9 @@ MolBase.prototype = {
       return null;
     }
     return residue.atom(parts[2]);
-  },
+  }
 
-  center : function() {
+  center() {
     var sum = vec3.create();
     var count = 0;
     this.eachAtom(function(atom) {
@@ -158,54 +217,54 @@ MolBase.prototype = {
       vec3.scale(sum, sum, 1/count);
     }
     return sum;
-  },
+  }
 
-  // returns a sphere containing all atoms part of this structure. This will 
-  // not calculate the minimal bounding sphere, just a good-enough 
+  // returns a sphere containing all atoms part of this structure. This will
+  // not calculate the minimal bounding sphere, just a good-enough
   // approximation.
-  boundingSphere : function() {
+  boundingSphere() {
     var center = this.center();
     var radiusSquare = 0.0;
     this.eachAtom(function(atom) {
       radiusSquare = Math.max(radiusSquare, vec3.sqrDist(center, atom.pos()));
     });
     return new geom.Sphere(center, Math.sqrt(radiusSquare));
-  },
+  }
 
   // returns all backbone traces of all chains of this structure
-  backboneTraces : function() {
+  backboneTraces() {
     var chains = this.chains();
     var traces = [];
     for (var i = 0; i < chains.length; ++i) {
       Array.prototype.push.apply(traces, chains[i].backboneTraces());
     }
     return traces;
-  },
+  }
 
-
-  select : function(what) {
-
+  select(what) {
     if (what === 'protein') {
       return this.residueSelect(function(r) { return r.isAminoacid(); });
     }
+
     if (what === 'water') {
       return this.residueSelect(function(r) { return r.isWater(); });
     }
+
     if (what === 'ligand') {
-      return this.residueSelect(function(r) { 
+      return this.residueSelect(function(r) {
         return !r.isAminoacid() && !r.isWater();
       });
     }
+
     if (what === 'polymer') {
       return select.polymer(this, new MolView(this));
     }
     // when what is not one of the simple strings above, we assume what
     // is a dictionary containing predicates which have to be fulfilled.
     return select.dict(this, new MolView(this), what || {});
-  },
+  }
 
-
-  residueSelect : function(predicate) {
+  residueSelect(predicate) {
     console.time('Mol.residueSelect');
     var view = new MolView(this.full());
     for (var ci = 0; ci < this._chains.length; ++ci) {
@@ -223,9 +282,9 @@ MolBase.prototype = {
     }
     console.timeEnd('Mol.residueSelect');
     return view;
-  },
+  }
 
-  atomSelect : function(predicate) {
+  atomSelect(predicate) {
     console.time('Mol.atomSelect');
     var view = new MolView(this.full());
     for (var ci = 0; ci < this._chains.length; ++ci) {
@@ -252,11 +311,9 @@ MolBase.prototype = {
     }
     console.timeEnd('Mol.atomSelect');
     return view;
-  },
+  }
 
-
-
-  assembly : function(id) {
+  assembly(id) {
     var assemblies = this.assemblies();
     for (var i = 0; i < assemblies.length; ++i) {
       if (assemblies[i].name() === id) {
@@ -264,10 +321,10 @@ MolBase.prototype = {
       }
     }
     return null;
-  },
+  }
 
-  chainsByName : function(chainNames) {
-    // build a map to avoid O(n^2) behavior. That's overkill when the list 
+  chainsByName(chainNames) {
+    // build a map to avoid O(n^2) behavior. That's overkill when the list
     // of names is short but should give better performance when requesting
     // multiple chains.
     var chainMap = { };
@@ -283,129 +340,127 @@ MolBase.prototype = {
       }
     }
     return filteredChains;
-  },
-  selectWithin : (function() {
-    var dist = vec3.create();
-    return function(mol, options) {
-      console.time('Mol.selectWithin');
-      options = options || {};
-      var radius = options.radius || 4.0;
-      var radiusSqr = radius * radius;
-      var matchResidues = !!options.matchResidues;
-      var targetAtoms = [];
-      mol.eachAtom(function(a) { targetAtoms.push(a); });
+  }
 
-      var view = new MolView(this.full());
-      var addedRes = null, addedChain = null;
-      var chains = this.chains();
-      var skipResidue = false;
-      for (var ci = 0; ci < chains.length; ++ci) {
-        var residues = chains[ci].residues();
-        addedChain = null;
-        for (var ri = 0; ri < residues.length; ++ri) {
-          addedRes = null;
-          skipResidue = false;
-          var atoms = residues[ri].atoms();
-          for (var ai = 0; ai < atoms.length; ++ai) {
-            if (skipResidue) {
+  selectWithin(mol, options) {
+    console.time('Mol.selectWithin');
+    var dist = vec3.create();
+    options = options || {};
+    var radius = options.radius || 4.0;
+    var radiusSqr = radius * radius;
+    var matchResidues = !!options.matchResidues;
+    var targetAtoms = [];
+    mol.eachAtom(function(a) { targetAtoms.push(a); });
+
+    var view = new MolView(this.full());
+    var addedRes = null, addedChain = null;
+    var chains = this.chains();
+    var skipResidue = false;
+    for (var ci = 0; ci < chains.length; ++ci) {
+      var residues = chains[ci].residues();
+      addedChain = null;
+      for (var ri = 0; ri < residues.length; ++ri) {
+        addedRes = null;
+        skipResidue = false;
+        var atoms = residues[ri].atoms();
+        for (var ai = 0; ai < atoms.length; ++ai) {
+          if (skipResidue) {
+            break;
+          }
+          for (var wi = 0; wi < targetAtoms.length; ++wi) {
+            vec3.sub(dist, atoms[ai].pos(), targetAtoms[wi].pos());
+            if (vec3.sqrLen(dist) > radiusSqr) {
+              continue;
+            }
+            if (!addedChain) {
+              addedChain = view.addChain(chains[ci].full(), false);
+            }
+            if (!addedRes) {
+              addedRes =
+                  addedChain.addResidue(residues[ri].full(), matchResidues);
+            }
+            if (matchResidues) {
+              skipResidue = true;
               break;
             }
-            for (var wi = 0; wi < targetAtoms.length; ++wi) {
-              vec3.sub(dist, atoms[ai].pos(), targetAtoms[wi].pos());
-              if (vec3.sqrLen(dist) > radiusSqr) {
-                continue;
-              }
-              if (!addedChain) {
-                addedChain = view.addChain(chains[ci].full(), false);
-              }
-              if (!addedRes) {
-                addedRes =
-                    addedChain.addResidue(residues[ri].full(), matchResidues);
-              }
-              if (matchResidues) {
-                skipResidue = true;
-                break;
-              } 
-              addedRes.addAtom(atoms[ai].full());
-              break;
-            }
+            addedRes.addAtom(atoms[ai].full());
+            break;
           }
         }
       }
-      console.timeEnd('Mol.selectWithin');
-      return view;
-    };
-  })(),
-  createEmptyView : function() {
+    }
+    console.timeEnd('Mol.selectWithin');
+    return view;
+  }
+
+  createEmptyView() {
     return new MolView(this.full());
   }
-};
-
-function Mol() {
-  MolBase.call(this);
-  this._chains = [];
-  this._assemblies = [];
-  this._nextAtomIndex = 0;
 }
 
-utils.derive(Mol, MolBase, {
-  addAssembly : function(assembly) { 
-    this._assemblies.push(assembly); 
-  },
+export class Mol extends MolBase {
+  constructor() {
+    super();
 
-  setAssemblies : function(assemblies) { 
-    this._assemblies = assemblies; 
-  },
+    this._chains = [];
+    this._assemblies = [];
+    this._nextAtomIndex = 0;
+  }
 
-  assemblies : function() { return this._assemblies; },
+  addAssembly(assembly) {
+    this._assemblies.push(assembly);
+  }
 
-  chains : function() { return this._chains; },
+  setAssemblies(assemblies) {
+    this._assemblies = assemblies;
+  }
 
-  full : function() { return this; },
+  assemblies() { return this._assemblies; }
 
-  containsResidue : function(residue) {
+  chains() { return this._chains; }
+
+  full() { return this; }
+
+  containsResidue(residue) {
     return residue.full().structure() === this;
-  },
+  }
 
-  chainByName : function(name) { 
+  chainByName(name) {
     for (var i = 0; i < this._chains.length; ++i) {
       if (this._chains[i].name() === name) {
         return this._chains[i];
       }
     }
     return null;
-  },
+  }
 
   // for backwards compatibility
-  chain : function(name) {
+  chain(name) {
     return this.chainByName(name);
-  },
+  }
 
-  nextAtomIndex : function() {
-    var nextIndex = this._nextAtomIndex; 
-    this._nextAtomIndex+=1; 
-    return nextIndex; 
-  },
+  nextAtomIndex() {
+    var nextIndex = this._nextAtomIndex;
+    this._nextAtomIndex+=1;
+    return nextIndex;
+  }
 
-  addChain : function(name) {
+  addChain(name) {
     var chain = new Chain(this, name);
     this._chains.push(chain);
     return chain;
-  },
+  }
 
-
-  connect : function(atom_a, atom_b) {
+  connect(atom_a, atom_b) {
     var bond = new Bond(atom_a, atom_b);
     atom_a.addBond(bond);
     atom_b.addBond(bond);
     return bond;
-  },
-
-
+  }
 
   // determine connectivity structure. for simplicity only connects atoms of the
   // same residue, peptide bonds and nucleotides
-  deriveConnectivity : function() {
+  deriveConnectivity() {
     console.time('Mol.deriveConnectivity');
     var thisStructure = this;
     var prevResidue = null;
@@ -440,23 +495,27 @@ utils.derive(Mol, MolBase, {
       prevResidue = res;
     });
     console.timeEnd('Mol.deriveConnectivity');
-  },
-});
-
-function MolView(mol) {
-  MolBase.call(this);
-  this._mol = mol; 
-  this._chains = [];
+  }
 }
 
-utils.derive(MolView, MolBase, {
+export class MolView extends MolBase {
+  constructor(mol) {
+    super(mol);
 
-  full : function() { return this._mol; },
+    this._mol = mol;
+    this._chains = [];
+  }
 
-  assemblies : function() { return this._mol.assemblies(); },
+  full() {
+    return this._mol;
+  }
+
+  assemblies() {
+    return this._mol.assemblies();
+  }
 
   // add chain to view
-  addChain : function(chain, recurse) {
+  addChain(chain, recurse) {
     var chainView = new ChainView(this, chain.full());
     this._chains.push(chainView);
     if (recurse) {
@@ -466,17 +525,17 @@ utils.derive(MolView, MolBase, {
       }
     }
     return chainView;
-  },
+  }
 
-  addAtom : function(atom) {
+  addAtom(atom) {
     var chain = this.chain(atom.residue().chain().name());
     if (chain === null) {
       chain = this.addChain(atom.residue().chain());
     }
     return chain.addAtom(atom);
-  },
+  }
 
-  removeAtom : function(atom, removeEmptyResiduesAndChains) {
+  removeAtom(atom, removeEmptyResiduesAndChains) {
     if (atom === null) {
       return false;
     }
@@ -486,14 +545,14 @@ utils.derive(MolView, MolBase, {
     }
     var removed = chain.removeAtom(atom, removeEmptyResiduesAndChains);
     if (removed && chain.residues().length === 0) {
-      this._chains = this._chains.filter(function(c) { 
+      this._chains = this._chains.filter(function(c) {
         return c !== chain;
       });
     }
     return removed;
-  },
+  }
 
-  containsResidue : function(residue) {
+  containsResidue(residue) {
     if (!residue) {
       return false;
     }
@@ -502,25 +561,26 @@ utils.derive(MolView, MolBase, {
       return false;
     }
     return chain.containsResidue(residue);
-  },
+  }
 
-  addResidues : function (residues, recurse) {
+  addResidues (residues, recurse) {
     var that = this;
     var chainsViews = {};
     residues.forEach(function  (residue) {
       var chainName = residue.chain().name();
       if (typeof chainsViews[chainName] === 'undefined') {
-        chainsViews[chainName] = that.addChain(residue.chain(), false); 
+        chainsViews[chainName] = that.addChain(residue.chain(), false);
       }
       chainsViews[chainName].addResidue(residue, recurse);
     });
     return chainsViews;
-  },
+  }
 
+  chains() {
+    return this._chains;
+  }
 
-  chains : function() { return this._chains; },
-
-  chain : function(name) {
+  chain(name) {
     for (var i = 0; i < this._chains.length; ++i) {
       if (this._chains[i].name() === name) {
         return this._chains[i];
@@ -528,12 +588,4 @@ utils.derive(MolView, MolBase, {
     }
     return null;
   }
-});
-
-return {
-  MolView : MolView,
-  Mol : Mol
-};
-
-});
-
+}
